@@ -5,4 +5,8 @@ description: Home Page
 hide: true
 ---
 
-pls wokr sadjs dpasdhaslkdhkjs;kdh aljshkdhaslkdh ljasdjlkas hdlkasd has
+## Home
+
+This blog contains my journey into Coding.
+
+### Development Environment
