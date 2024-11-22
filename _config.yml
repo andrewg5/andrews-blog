@@ -1,6 +1,6 @@
 title: Nighthawk Pages 
 description: "Class of 2025"
-owner_name: John Mortensen
+owner_name: Andrew Ge
 github_username: andrewg5
 github_repo: "andrews-blog" 
 baseurl: "/andrews-blog"
@@ -9,7 +9,7 @@ remote_theme: jekyll/minima
 minima:
   skin: dark
   social_links:
-    - { platform: github, user_url: "https://github.com/nighthawkcoders"}
+    - { platform: github, user_url: "https://github.com/andrewg5"}
     - { platform: x, user_url: "https://x.com/NighthawkCoding/" }
     - { platform: youtube, user_url: "https://www.youtube.com/@nighthawkcodingsociety2868" } 
 # remote_theme: pages-themes/midnight@v0.2.0
