@@ -5,6 +5,8 @@ description: Home Page
 hide: true
 ---
 
+{% include nav/home.html %}
+
 ## Home
 
 This blog contains my journey into Coding.
