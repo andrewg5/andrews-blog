@@ -13,9 +13,20 @@ permalink: /about/
 
 Hello! I'm Andrew, a freshman at DNHS.
 <br>
-<br>
+
 ## Here are some things that I enjoy
 
+
+
+
+<br>
+
+## My Programming Experience
+<li><b>C++<b> - 4 years
+<li><b>Java<b> - 3 years
+<li><b>Unity Game Engine<b> - 5 years
+<li><b>Javascript<b> - 1 year
+<li><b>Python<b> - 2 years
 
 
 
