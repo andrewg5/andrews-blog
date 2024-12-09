@@ -46,12 +46,10 @@ Hello! I'm Andrew, a freshman at DNHS.
 ## Here are some things that I enjoy
 
 <div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/tennis.png" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/mazerunner.png" alt="Image 2">
-  <img src="{{site.baseurl}}/images/placeholder.png" alt="Image 3">
-  <img src="{{site.baseurl}}/images/placeholder.png" alt="Image 4">
-  <img src="{{site.baseurl}}/images/placeholder.png" alt="Image 5">
-  <img src="{{site.baseurl}}/images/placeholder.png" alt="Image 6">
+  <img src="{{site.baseurl}}/images/about/tennis.png" alt="Tennis">
+  <img src="{{site.baseurl}}/images/about/mazerunner.png" alt="Maze Runner Book">
+  <img src="{{site.baseurl}}/images/about/terraria.png" alt="Terraria">
+  <img src="{{site.baseurl}}/images/about/vs.png" alt="Visual Studio">
 </div> 
 
 
