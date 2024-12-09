@@ -47,9 +47,10 @@ Hello! I'm Andrew, a freshman at DNHS.
 
 <div class="image-gallery">
   <img src="{{site.baseurl}}/images/about/tennis.png" alt="Tennis">
-  <img src="{{site.baseurl}}/images/about/mazerunner.png" alt="Maze Runner Book">
+  <img src="{{site.baseurl}}/images/about/cyberpatriot.png" alt="Cyberpatriot">
   <img src="{{site.baseurl}}/images/about/terraria.png" alt="Terraria">
   <img src="{{site.baseurl}}/images/about/vs.png" alt="Visual Studio">
+  <img src="{{site.baseurl}}/images/about/mazerunner.png" alt="Maze Runner Book">
 </div> 
 
 
