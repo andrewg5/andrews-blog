@@ -36,19 +36,18 @@ This blog contains my journey into Coding.
 
 ## HTML Hacks
 
-<div style="border: 4px solid black; padding: 20px;  width: 80%;">
-  <p style="border: 4px solid red; font-size: 1em; padding: 10px;">p</p>
-  <button style="border: 4px solid green; font-size: 1em; padding: 10px;">button</button>
+
+
+<div style="border: 4px solid black; padding: 20px;  width: 80%; height: 20%">
+  <p style="border: 4px solid red; font-size: 1em; padding: 5px;">p</p>
+  <button style="border: 4px solid green; font-size: 1em; padding: 5px;">button</button>
 </div>
 
 <br>
 <br>
 
-<div style="border: 4px solid black; padding: 20px; width: 80%; height: 50%;">
-  <a style="border: 4px solid blue; font-size: 1em; padding: 10px; display: block; width: 40%;" href="https://github.com/andrewg5/andrews-blog">a</a>
-  <a style="border: 4px solid blue; font-size: 1em; padding: 10px; display: block; width: 40%;" href="https://github.com/andrewg5/andrews-blog">a</a>
-  <p style="border: 4px solid red; font-size: 1em; padding: 10px;">p</p>
+<div style="border: 4px solid black; padding: 20px; width: 80%; height: 20%">
+  <a style="border: 4px solid blue; font-size: 1em; padding: 5px; display: block; width: 40%;" href="https://github.com/andrewg5/andrews-blog">a</a>
+  <a style="border: 4px solid blue; font-size: 1em; padding: 5px; display: block; width: 40%;" href="https://github.com/andrewg5/andrews-blog">a</a>
+  <p style="border: 4px solid red; font-size: 1em; padding: 5px;">p</p>
 </div>
-
-
-
