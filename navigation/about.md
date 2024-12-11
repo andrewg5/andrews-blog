@@ -65,6 +65,11 @@ Hello! I'm Andrew, a freshman at DNHS.
 <br>
 <br>
 <br>
+<button type="button" onclick="alert('Hello')">button</button>
+
+<br>
+<br>
+<br>
 
 
 <script src="https://utteranc.es/client.js"
