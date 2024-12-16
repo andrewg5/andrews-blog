@@ -135,13 +135,19 @@ permalink: /snake/
         const button_new_game2 = document.getElementById("new_game2");
         const button_setting_menu = document.getElementById("setting_menu");
         const button_setting_menu1 = document.getElementById("setting_menu1");
+        //image
+        const image = new Image(); // Using optional size for image
+        const images = ["{{site.baseurl}}/images/snake/apple.png", "{{site.baseurl}}/images/snake/pufferfish.png", "{{site.baseurl}}/images/snake/gCarrot.png"]
+        var index = 0;
+        image.src = images[index];
+        
         // Game Control
         const BLOCK = 10;   // size of block rendering
         let SCREEN = SCREEN_MENU;
         let snake;
         let snake_dir;
         let snake_next_dir;
-        let snake_speed;
+        let snake_speed = 50;
         let food = {x: 0, y: 0};
         let score;
         let wall;
@@ -263,8 +269,16 @@ permalink: /snake/
             if(checkBlock(snake[0].x, snake[0].y, food.x, food.y)){
                 snake[snake.length] = {x: snake[0].x, y: snake[0].y};
                 altScore(++score);
+
+                index++;
+                if(index > images.length - 1){
+                    index = 0;
+                }
+                image.src = images[index];
+
                 addFood();
                 makeFood(food.x, food.y);
+                
             }
             // Repaint canvas
             ctx.beginPath();
@@ -332,8 +346,7 @@ permalink: /snake/
         }
 
         let makeFood = function(x, y){
-            ctx.fillStyle = "#FF0000";
-            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+            ctx.drawImage(image, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
 
         /* Random food placement */
@@ -355,6 +368,7 @@ permalink: /snake/
         /* Update Score */
         /////////////////////////////////////////////////////////////
         let altScore = function(score_val){
+            //ele_score.innerHTML = String(score_val);
             ele_score.innerHTML = String(score_val);
         }
         /////////////////////////////////////////////////////////////
