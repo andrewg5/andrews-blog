@@ -17,7 +17,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #FFFFFF;
+        border-color:rgb(255, 255, 255);
     }
     canvas:focus{
         outline: none;
@@ -135,11 +135,15 @@ permalink: /snake/
         const button_new_game2 = document.getElementById("new_game2");
         const button_setting_menu = document.getElementById("setting_menu");
         const button_setting_menu1 = document.getElementById("setting_menu1");
-        //image
-        const image = new Image(); // Using optional size for image
-        const images = ["{{site.baseurl}}/images/snake/apple.png", "{{site.baseurl}}/images/snake/pufferfish.png", "{{site.baseurl}}/images/snake/gCarrot.png"]
+        //food image
+        const foodImage = new Image(); // Using optional size for image
+        const foodImages = ["{{site.baseurl}}/images/snake/apple.png", "{{site.baseurl}}/images/snake/pufferfish.png", "{{site.baseurl}}/images/snake/gCarrot.png"]
         var index = 0;
-        image.src = images[index];
+        foodImage.src = foodImages[index];
+        //snake image
+        const snakeHead = new Image();
+        const snakeHeads = ["{{site.baseurl}}/images/snake/headU.png", "{{site.baseurl}}/images/snake/headR.png", "{{site.baseurl}}/images/snake/headD.png", "{{site.baseurl}}/images/snake/headL.png"];
+        snakeHead.src = snakeHeads[1];
         
         // Game Control
         const BLOCK = 10;   // size of block rendering
@@ -147,7 +151,7 @@ permalink: /snake/
         let snake;
         let snake_dir;
         let snake_next_dir;
-        let snake_speed = 50;
+        let snake_speed;
         let food = {x: 0, y: 0};
         let score;
         let wall;
@@ -231,6 +235,7 @@ permalink: /snake/
                 case 2: _y++; break;
                 case 3: _x--; break;
             }
+            
             snake.pop(); // tail is removed
             snake.unshift({x: _x, y: _y}); // head is new in new position/orientation
             // Wall Checker
@@ -271,10 +276,10 @@ permalink: /snake/
                 altScore(++score);
 
                 index++;
-                if(index > images.length - 1){
+                if(index > foodImages.length - 1){
                     index = 0;
                 }
-                image.src = images[index];
+                foodImage.src = foodImages[index];
 
                 addFood();
                 makeFood(food.x, food.y);
@@ -286,7 +291,7 @@ permalink: /snake/
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             // Paint snake
             for(let i = 0; i < snake.length; i++){
-                activeDot(snake[i].x, snake[i].y);
+                activeDot(snake[i].x, snake[i].y, i);
             }
             // Paint food
             makeFood(food.x, food.y);
@@ -321,32 +326,44 @@ permalink: /snake/
         let changeDir = function(key){
            switch(key) {
         case 65:    // 'A' key
-            if (snake_dir !== 1)    // not right
+            if (snake_dir !== 1){    // not right
                 snake_next_dir = 3; // then switch left
+                snakeHead.src = snakeHeads[3];
+            }
             break;
         case 87:    // 'W' key
-            if (snake_dir !== 2)    // not down
+            if (snake_dir !== 2){    // not down
                 snake_next_dir = 0; // then switch up
+                snakeHead.src = snakeHeads[0];
+            }
             break;
         case 68:    // 'D' key
-            if (snake_dir !== 3)    // not left
+            if (snake_dir !== 3){    // not left
                 snake_next_dir = 1; // then switch right
+                snakeHead.src = snakeHeads[1];
+            }
             break;
         case 83:    // 'S' key
-            if (snake_dir !== 0)    // not up
+            if (snake_dir !== 0){    // not up
                 snake_next_dir = 2; // then switch down
+                snakeHead.src = snakeHeads[2];
+            }
             break;
             }
         }
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
-        let activeDot = function(x, y){
-            ctx.fillStyle = "#000000";
-            ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+        let activeDot = function(x, y, i){
+            if(i == 0)
+                ctx.drawImage(snakeHead, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+            else{
+                ctx.fillStyle = "#6abe30";
+                ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+            }
         }
 
         let makeFood = function(x, y){
-            ctx.drawImage(image, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+            ctx.drawImage(foodImage, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
 
         /* Random food placement */
@@ -382,7 +399,7 @@ permalink: /snake/
         /////////////////////////////////////////////////////////////
         let setWall = function(wall_value){
             wall = wall_value;
-            if(wall === 0){screen_snake.style.borderColor = "#606060";}
+            if(wall === 0){screen_snake.style.borderColor = "#6abe30";}
             if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
         }
     })();
