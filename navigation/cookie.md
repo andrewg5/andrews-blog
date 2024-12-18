@@ -49,18 +49,19 @@ permalink: /cookie/
     <img src="{{site.baseurl}}/images/cookieClicker/cookie.png" alt="cookie" id="cookie" style="cursor: pointer; width: 300px; height: auto;" >
     <div class="info">
         <p>Cookies: <span id="cookie-count">0</span></p>
-        <p>Workers: <span id="worker-count">0</span></p>
+        <p>Pradeeps: <span id="worker-count">0</span></p>
         <button id="upgrade-button">Upgrade (50 cookies)</button>
-        <button id="buy-button">Buy Worker (100 cookies)</button>
+        <button id="buy-button">Buy Pradeeps (100 cookies)</button>
     </div>
 </div>
 
 <script>
     let cookieCount = 0;
     let workers = 0;
-    let cookiePerClick = 100;
+    let cookiePerClick = 1;
     let upgradeCost = 50;
     let buyCost = 100;
+    let index = 0;
 
     // Get elements
     const cookieDisplay = document.getElementById('cookie-count');
@@ -69,10 +70,26 @@ permalink: /cookie/
     const upgradeButton = document.getElementById('upgrade-button');
     const buyButton = document.getElementById('buy-button');
 
+    window.onload = function(){
+        mainLoop();
+    }
+
+    let mainLoop = function(){
+        index++;
+        if(index >= 60){
+            cookieCount += workers;
+            index = 0;
+        }
+        updateDisplay();
+
+        setTimeout(mainLoop);
+    }
+
     // Cookie click function
     cookie.addEventListener('click', function() {
         cookieCount += cookiePerClick;
         updateDisplay();
+        
     });
 
     // Upgrade function
@@ -94,7 +111,8 @@ permalink: /cookie/
             cookieCount -= buyCost;
             workers++;
             updateDisplay();
-            buyButton.textContent = `Buy Worker (Next: ${buyCost} cookies)`;
+            buyButton.textContent = `Buy Pradeeps (Next: ${buyCost} cookies)`;
+            //mainLoop();
         } else {
             alert('Not enough cookies!');
         }
@@ -103,7 +121,7 @@ permalink: /cookie/
     // Update the display
     function updateDisplay() {
         cookieDisplay.textContent = cookieCount;
-        workerDisplay.textContent = workerCount;
+        workerDisplay.textContent = workers;
 
         if (cookieCount >= upgradeCost) {
             upgradeButton.disabled = false;
