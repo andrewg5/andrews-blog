@@ -29,6 +29,18 @@ This blog contains my journey into Coding.
 
 <br>
 
+## Here are some things I am working on
+
+### Creating games with Unity
+<br>
+<img src="{{site.baseurl}}/images/unity.png" alt="Unity" style="width: 300px; height: auto;">
+
+### Coding for Optix
+<br>
+<img src="{{site.baseurl}}/images/optix.png" alt="Optix" style="width: 300px; height: auto;">
+
+<br>
+<br>
 <br>
 
 <button> Button </button>
