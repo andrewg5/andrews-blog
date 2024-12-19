@@ -42,7 +42,7 @@ permalink: /cookie/
     }
 </style>
 
-<body>
+<audio id="click-sound" src="{{site.baseurl}}/images/cookieClicker/mangoSound.mp3"></audio>
 
 <div class="container">
     <h2>Cookie Clicker Game</h2>
@@ -69,6 +69,7 @@ permalink: /cookie/
     const cookie = document.getElementById('cookie');
     const upgradeButton = document.getElementById('upgrade-button');
     const buyButton = document.getElementById('buy-button');
+    const clickSound = document.getElementById('click-sound');
 
     window.onload = function(){
         mainLoop();
@@ -89,6 +90,7 @@ permalink: /cookie/
     cookie.addEventListener('click', function() {
         cookieCount += cookiePerClick;
         updateDisplay();
+        clickSound.play();
         
     });
 
