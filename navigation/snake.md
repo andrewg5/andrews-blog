@@ -144,12 +144,16 @@ permalink: /snake/
         const snakeHead = new Image();
         const snakeHeads = ["{{site.baseurl}}/images/snake/headU.png", "{{site.baseurl}}/images/snake/headR.png", "{{site.baseurl}}/images/snake/headD.png", "{{site.baseurl}}/images/snake/headL.png"];
         snakeHead.src = snakeHeads[1];
+
+        const snakeTail = new Image();
+        snakeTail.src = "{{site.baseurl}}/images/snake/apple.png";
         
         // Game Control
         const BLOCK = 10;   // size of block rendering
         let SCREEN = SCREEN_MENU;
         let snake;
         let snake_dir;
+        let tailDir = { x: 0, y: 0 };
         let snake_next_dir;
         let snake_speed;
         let food = {x: 0, y: 0};
@@ -235,9 +239,12 @@ permalink: /snake/
                 case 2: _y++; break;
                 case 3: _x--; break;
             }
-            
-            snake.pop(); // tail is removed
+
+            //snake.pop(); // tail is removed
+            snake.pop();
             snake.unshift({x: _x, y: _y}); // head is new in new position/orientation
+            
+            
             // Wall Checker
             if(wall === 1){
                 // Wall on, Game over test
@@ -286,9 +293,10 @@ permalink: /snake/
                 
             }
             // Repaint canvas
-            ctx.beginPath();
+            /*ctx.beginPath();
             ctx.fillStyle = "lightgreen";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);*/
+            drawCheckerboard();
             // Paint snake
             for(let i = 0; i < snake.length; i++){
                 activeDot(snake[i].x, snake[i].y, i);
@@ -324,11 +332,13 @@ permalink: /snake/
         /* Key Inputs and Actions */
         /////////////////////////////////////////////////////////////
         let changeDir = function(key){
+            snakeTail.src = snakeHeads[snake_dir];
            switch(key) {
         case 65:    // 'A' key
             if (snake_dir !== 1){    // not right
                 snake_next_dir = 3; // then switch left
                 snakeHead.src = snakeHeads[3];
+                
             }
             break;
         case 87:    // 'W' key
@@ -351,17 +361,23 @@ permalink: /snake/
             break;
             }
         }
-        /* Dot for Food or Snake part */
-        /////////////////////////////////////////////////////////////
+        
+        // Draw the Snake
         let activeDot = function(x, y, i){
             if(i == 0)
                 ctx.drawImage(snakeHead, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+            /*else if(i == snake.length - 1){
+                ctx.drawImage(snakeTail, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
+                
+            }*/
             else{
                 ctx.fillStyle = "#6abe30";
                 ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
             }
         }
 
+        
+        // Make food
         let makeFood = function(x, y){
             ctx.drawImage(foodImage, x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
@@ -399,8 +415,22 @@ permalink: /snake/
         /////////////////////////////////////////////////////////////
         let setWall = function(wall_value){
             wall = wall_value;
-            if(wall === 0){screen_snake.style.borderColor = "#6abe30";}
-            if(wall === 1){screen_snake.style.borderColor = "#FFFFFF";}
+            if(wall === 0){screen_snake.style.borderColor = "#FFFFFF";}
+            if(wall === 1){screen_snake.style.borderColor = "#056300";}
         }
+
+        // Draw Checkerboard pattern
+        let drawCheckerboard = function () {
+            const colors = ["#c7ffc4", "#adffa8"]; // Light colors for the checkerboard
+            const tileSize = BLOCK; // Use the same block size for consistency
+
+            for (let y = 0; y < canvas.height / tileSize; y++) {
+                for (let x = 0; x < canvas.width / tileSize; x++) {
+                    const colorIndex = (x + y) % 2; // Alternate colors
+                    ctx.fillStyle = colors[colorIndex];
+                    ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
+                }
+            }
+};
     })();
 </script>

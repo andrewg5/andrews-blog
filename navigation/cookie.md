@@ -58,7 +58,7 @@ permalink: /cookie/
 <script>
     let cookieCount = 0;
     let workers = 0;
-    let cookiePerClick = 1;
+    let cookiePerClick = 10;
     let upgradeCost = 50;
     let buyCost = 100;
     let index = 0;
