@@ -153,7 +153,6 @@ permalink: /snake/
         let SCREEN = SCREEN_MENU;
         let snake;
         let snake_dir;
-        let tailDir = { x: 0, y: 0 };
         let snake_next_dir;
         let snake_speed;
         let food = {x: 0, y: 0};
