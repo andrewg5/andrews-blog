@@ -420,8 +420,8 @@ permalink: /snake/
 
         // Draw Checkerboard pattern
         let drawCheckerboard = function () {
-            const colors = ["#c7ffc4", "#adffa8"]; // Light colors for the checkerboard
-            const tileSize = BLOCK; // Use the same block size for consistency
+            const colors = ["#c7ffc4", "#adffa8"]; // colors for the checkerboard
+            const tileSize = BLOCK; 
 
             for (let y = 0; y < canvas.height / tileSize; y++) {
                 for (let x = 0; x < canvas.width / tileSize; x++) {
