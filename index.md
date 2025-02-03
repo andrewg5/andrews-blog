@@ -28,6 +28,29 @@ This blog contains my journey into Coding.
 </div>
 
 <br>
+## Lessons
+[Arrays Homework]({{site.baseurl}}/ArraysHomework/)
+[Arrays Popcorn Hack 1]({{site.baseurl}}/arrayspopcornhack1/)
+[Arrays Popcorn Hack 2]({{site.baseurl}}/arrayspopcornhack2/)
+<br>
+[Booleans Homework]({{site.baseurl}}/booleansHomework/)
+[Booleans Popcorn Hack]({{site.baseurl}}/booleansPopcornHack/)
+<br>
+[Classes Homework]({{site.baseurl}}/ClassesHomework/)
+[Classes Popcorn Hack]({{site.baseurl}}/ClassesPopcornHack/)
+<br>
+[Conditions Homework]({{site.baseurl}}/Conditions_HW/)
+[Conditions Popcorn Hack]({{site.baseurl}}/csse/javascript/fundamentals/conditions_hacks/)
+<br>
+[Nested Conditionals Homework]({{site.baseurl}}/csse/javascript/fundamentals/nestedConditionals/Homework/)
+[Nested Conditionals Popcorn Hack 1]({{site.baseurl}}/csse/javascript/fundamentals/nestedConditionals/PopcornHack1/)
+[Nested Conditionals Popcorn Hack 2]({{site.baseurl}}/csse/javascript/fundamentals/nestedConditionals/PopcornHack2/)
+<br>
+[Variables Homework]({{site.baseurl}}/csse/lessons/variables/homework/)
+[Variables Popcorn Hack 1]({{site.baseurl}}/csse/lessons/variables/popcornHax/)
+
+
+<br>
 
 ## Here are some things I am working on
 
