@@ -25,7 +25,7 @@ NPC1: makes player answer questions, if player answer correctly, u get the key
 NPC2: make player find an sword, return back to npc with spoon, to get the other key
 <br>
 
-NPC3: tells player that he needs to find two items to progress to the next level
+NPC3: tells player that he needs to find two keys to escape and progress
 <br>
 
 item(spoon): Player interact with item, item disapear, set pickUpItem bool to true, then player interact with npc to continue to get an item.
@@ -36,3 +36,7 @@ we wont add a sprite for this, just a notification that the player has obtained 
 <br>
 
 exact sprites still undetermined but we have a general idea.
+
+<br>
+<img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="Unitplany" style="width: 300px; height: auto;">
+
