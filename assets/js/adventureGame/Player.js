@@ -16,6 +16,8 @@ const INIT_POSITION = { x: 0, y: 0 };
  * @method handleKeyDown - Handles key down events to change the object's velocity.
  * @method handleKeyUp - Handles key up events to stop the object's velocity.
  */
+let itemCollected = false; 
+
 class Player extends Character {
     /**
      * The constructor method is called when a new Player object is created.
@@ -26,7 +28,19 @@ class Player extends Character {
         super(data);
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
         this.bindEventListeners();
+
     }
+
+    setPlayerItem() {
+        console.log(itemCollected);
+        itemCollected = true;
+    }
+
+    getPlayerItem(){
+        console.log(itemCollected);
+        return itemCollected;
+    }
+
 
 
     /**

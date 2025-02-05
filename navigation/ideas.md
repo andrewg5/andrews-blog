@@ -8,11 +8,12 @@ permalink: /ideas/
 
 Theme : 
 Excape room before u get tickled by lucas masterson
+<br>
 It is timed, so if you dont finish in a certain time peroid u restart
 <br>
 Player : will come up with later, idk find random player sprite
 <br>
-Background : a dark room with 3 npcs in it.
+Background : a dark room.
 <br>
 <br>
 NPC: Player interact with NPC, NPC give quests.
@@ -41,5 +42,5 @@ we wont add a sprite for this, just a notification that the player has obtained 
 exact sprites still undetermined but we have a general idea.
 
 <br>
-<img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 300px; height: auto;">
+<img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 500px; height: auto;">
 

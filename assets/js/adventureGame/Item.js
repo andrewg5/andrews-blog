@@ -1,11 +1,16 @@
+// To build GameLevels, each contains GameObjects from below imports
 import GameEnv from './GameEnv.js';
+import Background from './Background.js';
 import GameObject from './GameObject.js';
+import Player from './Player.js';
+import Character from './Character.js';
 
 // Define non-mutable constants as defaults
 const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
 const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
 const ANIMATION_RATE = 1; // 1/nth of the frame rate
 const INIT_POSITION = { x: 0, y: 0 };
+
 
 /**
  * Item is a dynamic class that manages the data and events for objects like player and NPCs.
@@ -37,7 +42,30 @@ const INIT_POSITION = { x: 0, y: 0 };
  * @method resize - Resizes the object based on the game environment.
  * @method destroy - Removes the object from the game environment.    
  */
+
+let player;  // Declare player globally
+/*
+// Wait for the DOM to be fully loaded before creating the player
+window.addEventListener('DOMContentLoaded', () => {
+    player = new Player();  // Now accessible globally
+    console.log(player);
+    console.log("ertyu");
+});*/
+
+/*window.onload = () => {
+    console.log("Window fully loaded");
+    console.log("Checking Player class:", Player); // Debugging line
+
+    player = new Player(sprite_data_chillguy);
+    console.log("Player instance created:", player);
+
+    player.setPlayerItem();
+};*/
+
+
+
 class Item extends GameObject {
+    
     /**
      * The constructor method is called when a new Player object is created.
      * 
@@ -45,6 +73,7 @@ class Item extends GameObject {
      */
     constructor(data = null) {
         super();
+
         this.state = {
             ...this.state,
             animation: 'idle',
@@ -93,11 +122,18 @@ class Item extends GameObject {
         // Initialize the object's position and velocity
         this.velocity = { x: 0, y: 0 };
 
+        //this.player = player;
+        player = data.player;
+        console.log(player);
+        player.setPlayerItem();
+
         // Add this object to the gameLoop
         GameEnv.gameObjects.push(this);
 
         // Set the initial size and velocity of the object
         this.resize();
+
+        this.bindEventListeners();
 
     }
 
@@ -162,6 +198,7 @@ class Item extends GameObject {
     update() {
         // Update begins by drawing the object object
         this.draw();
+        
 
         this.collisionChecks();
 
@@ -190,6 +227,57 @@ class Item extends GameObject {
             this.position.x = 0;
             this.velocity.x = 0;
         }
+    }
+
+    bindEventListeners() {
+        addEventListener('keydown', this.handleKeyDown.bind(this));
+        addEventListener('keyup', this.handleKeyUp.bind(this));
+    }
+    /**
+     * Handle keydown events for interaction.
+     * @param {Object} event - The keydown event.
+     */
+    handleKeyDown({ key }) {
+
+        switch (key) {
+            case 'e':  
+                player.setPlayerItem();
+                break;
+            case 'u':  
+              player.setPlayerItem();
+                break;
+        }
+    }
+
+    /**
+     * Handle keyup events to stop player actions.
+     * @param {Object} event - The keyup event.
+     */
+    handleKeyUp({ key }) {
+        if (key === 'e' || key === 'u') {
+            // Clear any active timeouts when the interaction key is released
+            if (this.alertTimeout) {
+                clearTimeout(this.alertTimeout);
+                this.alertTimeout = null;
+            }
+        }
+    }
+
+    /**
+     * Update the collisions array when player is touching the object
+     * @param {*} objectID 
+     */
+    
+    handleCollisionEvent() {
+        const objectID = this.collisionData.touchPoints.other.id;
+        const objectGreet = this.collisionData.touchPoints.other.greet;
+        // check if the collision type is not already in the collisions array
+        if (!this.state.collisionEvents.includes(objectID)) {
+            // add the collisionType to the collisions array, making it the current collision
+            this.state.collisionEvents.push(objectID);
+            //alert(objectGreet);
+        }
+        this.handleReaction();
     }
 
     /**

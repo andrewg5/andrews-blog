@@ -47,44 +47,25 @@ class GameLevelDesert {
     };
     
     // Player data for item
-    const sprite_src_item = path + "/images/gamify/item.png"; // be sure to include the path
-    const ITEM_SCALE_FACTOR = 5;
-    const sprite_data_item = {
+    const spriteItem1 = path + "/images/gamify/item.png"; // be sure to include the path
+    const scaleItem1 = 10;
+    const spriteDataItem1 = {
         id: 'Item',
         greeting: "Hi I am Chill Guy, the desert wanderer. I am looking for wisdome and adventure!",
-        src: sprite_src_item,
-        SCALE_FACTOR: ITEM_SCALE_FACTOR,
+        src: spriteItem1,
+        SCALE_FACTOR: scaleItem1,
         STEP_FACTOR: 1000,
         ANIMATION_RATE: 50,
-        INIT_POSITION: { x: 200, y: height - (height/ITEM_SCALE_FACTOR) }, 
+        INIT_POSITION: { x: 200, y: height - (height/scaleItem1) - 100}, 
         pixels: {height: 160, width: 160},
         orientation: {rows: 1, columns: 1 },
         down: {row: 0, start: 0, columns: 1 },
         left: {row: 1, start: 0, columns: 1 },
         right: {row: 1, start: 0, columns: 1 },
         up: {row: 1, start: 0, columns: 1 },
-        hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 }
+        hitbox: { widthPercentage: 0.2, heightPercentage: 0.2 },
+        player: new Player(sprite_data_chillguy)
     };
-
-    /*const sprite_src_item = path + "/images/gamify/item.png"; // be sure to include the path
-    const ITEM_SCALE_FACTOR = 5;
-    const sprite_data_item = {
-        /*id: 'Item',
-        greeting: "Hi I am Chill Guy, the desert wanderer. I am looking for wisdome and adventure!",
-        src: sprite_src_item,
-        SCALE_FACTOR: ITEM_SCALE_FACTOR,
-        STEP_FACTOR: 1000,
-        ANIMATION_RATE: 50,
-        INIT_POSITION: { x: 200, y: height - (height/ITEM_SCALE_FACTOR) }, 
-        pixels: {height: 384, width: 512},
-        orientation: {rows: 3, columns: 4 },
-        down: {row: 0, start: 0, columns: 3 },
-        left: {row: 2, start: 0, columns: 3 },
-        right: {row: 1, start: 0, columns: 3 },
-        up: {row: 3, start: 0, columns: 3 },
-        hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
-        keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
-    };*/
 
       
 
@@ -93,7 +74,7 @@ class GameLevelDesert {
     this.objects = [
       { class: Background, data: image_data_desert },
       { class: Player, data: sprite_data_chillguy },
-      { class: Item, data: sprite_data_item},
+      { class: Item, data: spriteDataItem1},
     ];
   }
 
