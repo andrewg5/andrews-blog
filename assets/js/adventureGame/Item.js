@@ -43,24 +43,7 @@ const INIT_POSITION = { x: 0, y: 0 };
  * @method destroy - Removes the object from the game environment.    
  */
 
-let player;  // Declare player globally
-/*
-// Wait for the DOM to be fully loaded before creating the player
-window.addEventListener('DOMContentLoaded', () => {
-    player = new Player();  // Now accessible globally
-    console.log(player);
-    console.log("ertyu");
-});*/
-
-/*window.onload = () => {
-    console.log("Window fully loaded");
-    console.log("Checking Player class:", Player); // Debugging line
-
-    player = new Player(sprite_data_chillguy);
-    console.log("Player instance created:", player);
-
-    player.setPlayerItem();
-};*/
+let player; 
 
 
 
@@ -201,32 +184,6 @@ class Item extends GameObject {
         
 
         this.collisionChecks();
-
-        // Update or change position according to velocity events
-        this.position.x += this.velocity.x;
-        this.position.y += this.velocity.y;
-
-        // Ensure the object stays within the canvas boundaries
-        // Bottom of the canvas
-        if (this.position.y + this.height > GameEnv.innerHeight) {
-            this.position.y = GameEnv.innerHeight - this.height;
-            this.velocity.y = 0;
-        }
-        // Top of the canvas
-        if (this.position.y < 0) {
-            this.position.y = 0;
-            this.velocity.y = 0;
-        }
-        // Right of the canvas
-        if (this.position.x + this.width > GameEnv.innerWidth) {
-            this.position.x = GameEnv.innerWidth - this.width;
-            this.velocity.x = 0;
-        }
-        // Left of the canvas
-        if (this.position.x < 0) {
-            this.position.x = 0;
-            this.velocity.x = 0;
-        }
     }
 
     bindEventListeners() {
@@ -244,7 +201,7 @@ class Item extends GameObject {
                 player.setPlayerItem();
                 break;
             case 'u':  
-              player.setPlayerItem();
+                player.getPlayerItem();
                 break;
         }
     }

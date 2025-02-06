@@ -16,12 +16,12 @@ class GameLevelDesert {
 
 
     // Background data
-    const image_src_desert = path + "/images/gamify/desert.png"; // be sure to include the path
-    const image_data_desert = {
-        name: 'desert',
-        greeting: "Welcome to the desert!  It is hot and dry here, but there are many adventures to be had!",
-        src: image_src_desert,
-        pixels: {height: 580, width: 1038}
+    const image_src_dungeon = path + "/images/gamify/rpgBackground.png"; // be sure to include the path
+    const image_data_dungeon = {
+        name: 'dungeon',
+        greeting: "Welcome to the dungeon! Get 2 keys to escape.",
+        src: image_src_dungeon,
+        pixels: {height: 1135, width: 2490}
     };
 
 
@@ -51,7 +51,7 @@ class GameLevelDesert {
     const scaleItem1 = 10;
     const spriteDataItem1 = {
         id: 'Item',
-        greeting: "Hi I am Chill Guy, the desert wanderer. I am looking for wisdome and adventure!",
+        greeting: "Item needed to progress",
         src: spriteItem1,
         SCALE_FACTOR: scaleItem1,
         STEP_FACTOR: 1000,
@@ -72,7 +72,7 @@ class GameLevelDesert {
 
     // List of objects defnitions for this level
     this.objects = [
-      { class: Background, data: image_data_desert },
+      { class: Background, data: image_data_dungeon },
       { class: Player, data: sprite_data_chillguy },
       { class: Item, data: spriteDataItem1},
     ];
