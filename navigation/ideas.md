@@ -42,5 +42,15 @@ we wont add a sprite for this, just a notification that the player has obtained 
 exact sprites still undetermined but we have a general idea.
 
 <br>
-<img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 500px; height: auto;">
+<img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 800px; height: auto;">
+
+<br>
+<br>
+<img src="{{site.baseurl}}/images/RPGideas/questGiverNPC.png" alt="plan" style="width: 300px; height: auto;">
+<br>
+<img src="{{site.baseurl}}/images/RPGideas/spoon.png" alt="plan" style="width: 300px; height: auto;">
+<Br>
+<img src="{{site.baseurl}}/images/RPGideas/rpgBackground.png" alt="plan" style="width: 300px; height: auto;">
+<Br>
+<img src="{{site.baseurl}}/images/RPGideas/playerSprites.png" alt="plan" style="width: 300px; height: auto;">
 
