@@ -11,7 +11,6 @@ Excape room a dungeon before you get caught
 <br>
 It is timed, so if you dont finish in a certain time peroid u restart  (do this if have time)
 <br>
-Player : will come up with later, idk find random player sprite
 <br>
 Background : a dark room.
 <br>
@@ -23,7 +22,7 @@ NPC: Player interact with NPC, NPC give quests.
 NPC1: makes player answer questions, if player answer correctly, u get the key
 <Br>
 
-NPC2: make player find an sword, return back to npc with spoon, to get the other key
+NPC2: make player find an spoon, return back to npc with spoon, to get the other key
 <br>
 
 NPC3: tells player that he needs to find two keys to escape and progress
@@ -39,13 +38,22 @@ we wont add a sprite for this, just a notification that the player has obtained 
 <br>
 <br>
 
-exact sprites still undetermined but we have a general idea.
 
 <br>
 <img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 800px; height: auto;">
 
 <br>
 <br>
+Draw() - draws the sprites on the canvas <br>
+Update() - runs so that the sprites can refresh <Br>
+Interact() - runs when player is close enough, and when a key is pressed, for item, this destroys the item, and updates a variable to 1 item picked up <br>
+Interact() (NPC) - This runs when the player is touching the npc, it makes an alert show up. <br>
+GiveQuest() - This gives the player a quest, make a variable that stores if the quest is complete, if player interacts with npc after the variable is true, the quest is completed <br>
+Movement() - Checks when player presses down a key, then sets the velocity of a player to the speed. the speed is added in the Update() function<br>
+
+
+<br>
+<BR>
 npc
 <img src="{{site.baseurl}}/images/RPGideas/questGiverNPC.png" alt="plan" style="width: 300px; height: auto;">
 <br>
