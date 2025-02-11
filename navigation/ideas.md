@@ -50,7 +50,7 @@ exact sprites still undetermined but we have a general idea.
 <br>
 <img src="{{site.baseurl}}/images/RPGideas/spoon.png" alt="plan" style="width: 300px; height: auto;">
 <Br>
-<img src="{{site.baseurl}}/images/RPGideas/rpgBackground.png" alt="plan" style="width: 300px; height: auto;">
+<img src="{{site.baseurl}}/images/RPGideas/rpgBackground.png" alt="plan" style="width: 1000px; height: auto;">
 <Br>
 <img src="{{site.baseurl}}/images/RPGideas/playerSprites.png" alt="plan" style="width: 300px; height: auto;">
 
