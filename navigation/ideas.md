@@ -46,11 +46,18 @@ exact sprites still undetermined but we have a general idea.
 
 <br>
 <br>
+npc
 <img src="{{site.baseurl}}/images/RPGideas/questGiverNPC.png" alt="plan" style="width: 300px; height: auto;">
 <br>
+
+item
 <img src="{{site.baseurl}}/images/RPGideas/spoon.png" alt="plan" style="width: 300px; height: auto;">
 <Br>
+
+background
 <img src="{{site.baseurl}}/images/RPGideas/rpgBackground.png" alt="plan" style="width: 1000px; height: auto;">
 <Br>
+
+player
 <img src="{{site.baseurl}}/images/RPGideas/playerSprites.png" alt="plan" style="width: 300px; height: auto;">
 
