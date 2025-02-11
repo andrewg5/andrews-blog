@@ -7,9 +7,9 @@ permalink: /ideas/
 # Ideas for RPG game
 
 Theme : 
-Excape room before u get tickled by lucas masterson
+Excape room a dungeon before you get caught
 <br>
-It is timed, so if you dont finish in a certain time peroid u restart
+It is timed, so if you dont finish in a certain time peroid u restart  (do this if have time)
 <br>
 Player : will come up with later, idk find random player sprite
 <br>

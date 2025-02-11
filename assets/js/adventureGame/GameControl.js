@@ -1,11 +1,7 @@
 import GameEnv from './GameEnv.js';
 import GameLevelWater from './GameLevelWater.js';
 import GameLevelDesert from './GameLevelDesert.js';
-import GameLevelishan from './GameLevelishan.js';
-import GameLevelForest from './GameLevelForest.js';
 import { getStats } from "./StatsManager.js";
-
-
 
 
 
@@ -54,7 +50,7 @@ const GameControl = {
 
     start: function(path) {
         GameEnv.create();
-        this.levelClasses = [GameLevelDesert, GameLevelWater, GameLevelishan, GameLevelForest];
+        this.levelClasses = [GameLevelDesert, GameLevelWater];
         this.currentLevelIndex = 0;
         this.path = path;
         this.addExitKeyListener();
