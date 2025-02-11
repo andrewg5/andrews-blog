@@ -55,9 +55,12 @@ Movement() - Checks when player presses down a key, then sets the velocity of a 
 <br>
 <BR>
 npc
+<br>
 <img src="{{site.baseurl}}/images/RPGideas/questGiverNPC.png" alt="plan" style="width: 300px; height: auto;">
 <br>
-
+<img src="{{site.baseurl}}/images/RPGideas/npc2.png" alt="plan" style="width: 300px; height: auto;">
+<Br>
+<Br>
 item
 <img src="{{site.baseurl}}/images/RPGideas/spoon.png" alt="plan" style="width: 300px; height: auto;">
 <Br>
