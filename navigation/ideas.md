@@ -7,7 +7,7 @@ permalink: /ideas/
 # Ideas for RPG game
 
 Theme : 
-Excape room a dungeon
+Escape a room in a prison
 <br>
 <br>
 Background : a dark room.
