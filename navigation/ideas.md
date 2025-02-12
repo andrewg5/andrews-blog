@@ -35,6 +35,9 @@ Item(keys): The player needs two of these to progress to the enxt level, one fro
 we wont add a sprite for this, just a notification that the player has obtained an item
 <br>
 <br>
+<br>
+<img src="{{site.baseurl}}/images/RPGideas/flowchart.png" alt="plan" style="width: 800px; height: auto;">
+<br><br>
 
 
 <br>
