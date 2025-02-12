@@ -7,9 +7,7 @@ permalink: /ideas/
 # Ideas for RPG game
 
 Theme : 
-Excape room a dungeon before you get caught
-<br>
-It is timed, so if you dont finish in a certain time peroid u restart  (do this if have time)
+Excape room a dungeon
 <br>
 <br>
 Background : a dark room.
