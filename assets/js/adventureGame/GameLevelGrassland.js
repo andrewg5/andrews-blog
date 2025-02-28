@@ -4,7 +4,7 @@ import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 
-class GameLevelDesert {
+class GameLevelishan {
   constructor(path) {
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
@@ -16,8 +16,8 @@ class GameLevelDesert {
     // Background data
     const image_src_desert = path + "/images/gamify/desert.png"; // be sure to include the path
     const image_data_desert = {
-        name: 'desert',
-        greeting: "Welcome to the desert!  It is hot and dry here, but there are many adventures to be had!",
+        name: 'pradeep',
+        greeting: "Welcome to the ishan!  It is ishanny here, but there are many adventures to be had!",
         src: image_src_desert,
         pixels: {height: 580, width: 1038}
     };
@@ -76,7 +76,25 @@ class GameLevelDesert {
         }
       };
 
-
+    // NPC data for Questgiver
+    const sprite_src_questgiver = path + "/images/gamify/questgiver.png"; // Make sure to use the correct path
+    const sprite_data_questgiver = {
+        id: 'Questgiver',
+        greeting: "Hello! I'm the Questgiver! Are you ready for a task?",
+        src: sprite_src_questgiver,
+        SCALE_FACTOR: 6,  // Adjust as needed for scaling
+        ANIMATION_RATE: 50,
+        pixels: {height: 256, width: 352},
+        INIT_POSITION: { x: (width / 3), y: (height / 3)}, // Adjust this based on where you want it
+        orientation: {rows: 4, columns: 4 },
+        down: {row: 0, start: 0, columns: 3 },  // Stationary NPC by default
+        hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
+        quest: {
+            title: "New Adventure",
+            description: "Help me find the lost treasure in the desert!",
+            reward: "30 gold"
+        }
+      };
 
       // NPC data for Octocat
       const sprite_src_octocat = path + "/images/gamify/octocat.png"; // be sure to include the path
@@ -108,68 +126,7 @@ class GameLevelDesert {
           ] 
         }
     }
-  
 
-    const sprite_src_robot = path + "/images/gamify/robot.png"; // be sure to include the path
-    const sprite_data_robot = {
-        id: 'Robot',
-        greeting: "Hi I am Robot, the Jupyter Notebook mascot.  I am very happy to spend some linux shell time with you!",
-        src: sprite_src_robot,
-        SCALE_FACTOR: 10,  // Adjust this based on your scaling needs
-        ANIMATION_RATE: 100,
-        pixels: {height: 316, width: 627},
-        INIT_POSITION: { x: (width * 3 / 4), y: (height * 3 / 4)},
-        orientation: {rows: 3, columns: 6 },
-        down: {row: 1, start: 0, columns: 6 },  // This is the stationary npc, down is default 
-        hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-        // Linux command quiz
-        quiz: { 
-          title: "Jupyter Notebook Command Quiz",
-          questions: [
-            "Which shortcut is used to run a cell in Jupyter Notebook?\n1. Shift + Enter\n2. Ctrl + Enter\n3. Alt + Enter\n4. Tab + Enter",
-            "Which shortcut adds a new cell above the current cell?\n1. A\n2. B\n3. C\n4. D",
-            "Which shortcut adds a new cell below the current cell?\n1. B\n2. A\n3. C\n4. D",
-            "Which shortcut changes a cell to Markdown format?\n1. M\n2. Y\n3. R\n4. K",
-            "Which shortcut changes a cell to Code format?\n1. Y\n2. M\n3. C\n4. D",
-            "Which shortcut deletes the current cell?\n1. D, D\n2. X\n3. Del\n4. Ctrl + D",
-            "Which shortcut saves the current notebook?\n1. Ctrl + S\n2. Alt + S\n3. Shift + S\n4. Tab + S",
-            "Which shortcut restarts the kernel?\n1. 0, 0\n2. R, R\n3. K, K\n4. Shift + R",
-            "Which shortcut interrupts the kernel?\n1. I, I\n2. Ctrl + C\n3. Shift + I\n4. Alt + I",
-            "Which shortcut toggles line numbers in a cell?\n1. L\n2. N\n3. T\n4. G"
-          ] 
-        }
-      };
-
-  /*  // NPC data for HTML Hank
-const sprite_src_htmlhank = path + "/images/gamify/htmlhank.png"; // be sure to include the path
-const sprite_data_htmlhank = {
-    id: 'HTML Hank',
-    greeting: "Hey there! I'm HTML Hank, the web architect. Let's build some awesome webpages together!",
-    src: sprite_src_html_hank,
-    SCALE_FACTOR: 8,  // Adjust this based on your scaling needs
-    ANIMATION_RATE: 60,
-    pixels: { height: 350, width: 550 },
-    INIT_POSITION: { x: (width / 2), y: (height / 2) },
-    orientation: { rows: 2, columns: 4 },
-    down: { row: 0, start: 0, columns: 3 },  // This is the stationary NPC, down is default
-    hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
-
-    // HTML & CSS quiz
-    quiz: { 
-        title: "HTML & CSS Mastery Quiz",
-        questions: [
-            "What does HTML stand for?\n1. HyperText Markup Language\n2. HighText Machine Learning\n3. Hyper Transfer Markup Language\n4. Hyper Tool Markup Language",
-            "Which HTML tag is used to define the largest heading?\n1. <h1>\n2. <h6>\n3. <header>\n4. <h0>",
-            "Which tag is used to create a hyperlink in HTML?\n1. <a>\n2. <link>\n3. <href>\n4. <url>",
-            "Which CSS property is used to change text color?\n1. color\n2. text-color\n3. font-color\n4. bgcolor",
-            "Which unit is relative to the font size of the root element in CSS?\n1. rem\n2. em\n3. px\n4. vh",
-            "What is the correct way to reference an external CSS file?\n1. <link rel='stylesheet' href='styles.css'>\n2. <style src='styles.css'>\n3. <css file='styles.css'>\n4. <script href='styles.css'>",
-            "How do you center an element horizontally using CSS?\n1. margin: auto;\n2. align: center;\n3. text-align: middle;\n4. float: center;",
-            "Which HTML tag is used for creating an unordered list?\n1. <ul>\n2. <ol>\n3. <list>\n4. <li>",
-            "What is the purpose of the <meta> tag in HTML?\n1. To provide metadata about the document\n2. To create a navigation menu\n3. To define the main content area\n4. To embed images"
-        ]
-    }
-}; */
 
     // List of objects defnitions for this level
     this.objects = [
@@ -177,11 +134,10 @@ const sprite_data_htmlhank = {
       { class: Player, data: sprite_data_chillguy },
       { class: Npc, data: sprite_data_tux },
       { class: Npc, data: sprite_data_octocat },
-      { class: Npc, data: sprite_data_robot },
-     // { class: Npc, data: sprite_data_htmlhank }, 
+      { class: Npc, data: sprite_data_questgiver}
     ];
   }
 
 }
 
-export default GameLevelDesert;
+export default GameLevelishan;

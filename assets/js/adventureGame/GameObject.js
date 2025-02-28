@@ -34,6 +34,19 @@ class GameObject {
             collisionEvents: [],
             movement: { up: true, down: true, left: true, right: true },
         };
+        this.isInteracting = false;
+        
+        // Add component system
+        this.components = new Map();
+    }
+
+    addComponent(name, component) {
+        component.gameObject = this;
+        this.components.set(name, component);
+    }
+
+    getComponent(name) {
+        return this.components.get(name);
     }
 
     /**
@@ -51,7 +64,16 @@ class GameObject {
      * @abstract
      */
     update() {
-        throw new Error("Method 'update()' must be implemented.");
+        // Update all components
+        for (const component of this.components.values()) {
+            if (component.update) {
+                component.update();
+            }
+        }
+        
+        // Perform regular update logic
+        this.draw();
+        this.collisionChecks();
     }
 
     /**
@@ -92,6 +114,25 @@ class GameObject {
         if (!collisionDetected) {
             this.state.collisionEvents = [];
         }
+    }
+
+    hasCollided(greeting) {
+        for (var gameObj of GameEnv.gameObjects) {
+            if (gameObj.canvas && this != gameObj) {
+                this.isCollision(gameObj);
+                if (this.collisionData.hit) {
+                    const objectGreet = this.collisionData.touchPoints.other.greet;
+
+                    if(objectGreet == greeting){
+                        return true;
+                    }
+                            
+                    
+                }
+            }
+        }
+
+        return false;
     }
 
     /** Collision detection method
@@ -156,28 +197,26 @@ class GameObject {
      * @param {*} objectID 
      */
     handleCollisionEvent() {
-        const objectOther = this.collisionData.touchPoints.other;
+        const objectID = this.collisionData.touchPoints.other.id;
+        const objectGreet = this.collisionData.touchPoints.other.greet;
+
         // check if the collision type is not already in the collisions array
-        if (!this.state.collisionEvents.includes(objectOther.id)) {
+        if (!this.state.collisionEvents.includes(objectID)) {
             // add the collisionType to the collisions array, making it the current collision
-            this.state.collisionEvents.push(objectOther.id);
-            this.handleCollisionReaction(objectOther);
+
+            this.state.collisionEvents.push(objectID);
+            if(objectGreet != "none"){
+                alert(objectGreet);
+            }
+                
         }
-        this.handleCollisionState();
+        this.handleReaction();
     }
 
     /**
-     * Handles the reaction to the collision, this could be overridden by subclasses
-     * @param {*} other 
+     * Handles Player reaction or state updates related to the collision
      */
-    handleCollisionReaction(other) {
-        alert(other.greet);
-    }
-
-    /**
-     * Handles Player state updates related to the collision
-     */
-    handleCollisionState() {
+    handleReaction() {
         // handle player reaction based on collision type
         if (this.state.collisionEvents.length > 0) {
             const touchPoints = this.collisionData.touchPoints.this;
