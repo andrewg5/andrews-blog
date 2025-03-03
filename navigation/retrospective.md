@@ -38,7 +38,7 @@ permalink: /retrospective/
 - force player to talk to NPCs first
 - make quests a little more complex
 
-- 0.9/1 we got 8 points of feedback, but most were from people in csse2
+- 0.88/1 we got 8 points of feedback, but most were from people in csse2
 
 ### Reflection and looking forward
 - I was interested in Matthew's bathroom scanner, I thought it was cool how he managed to take the input from the card and then turn that into the time
@@ -59,12 +59,14 @@ permalink: /retrospective/
 
 #### Next Steps
 - rewrite code to be more expandable
-- 
+- know a lot more about js than before starting project, so we can make more complicated changes
+- add minigames to obtain keys
+ 
 
 - 0.92/1 bc I have a good plan of what to do in the future in both CS and the project
 
 
-Total score: 4.69/5
+Total score: 4.67/5
 
 
 
