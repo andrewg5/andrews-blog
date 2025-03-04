@@ -232,7 +232,7 @@ const Prompt = {
         promptDropDown.style.position = "fixed";
         promptDropDown.style.zIndex = "9999";
         promptDropDown.style.width = "70%"; 
-        promptDropDown.style.top = "15%";
+        promptDropDown.style.top = "65%";
         promptDropDown.style.left = "15%"; 
         promptDropDown.style.transition = "all 0.3s ease-in-out"; 
     },
