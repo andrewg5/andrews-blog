@@ -54,6 +54,7 @@ permalink: /retrospective/
 #### Individual strengths and weaknesses
 - good at coding
 - collaborate well
+<br>
 - should be more creative
 - be willing to try more unique solutions
 
