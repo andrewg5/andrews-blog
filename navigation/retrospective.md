@@ -14,7 +14,7 @@ permalink: /retrospective/
 - Created an item that extended on base code and learned javascript inheritance 
 - Added an inventory to rpg game and learned to combine javascript and markdown
 - I made the quiz check for correct answers in the RPG game and learned about how to compare arrays.
-- 0.94/1 bc I tried many new things and learned a lot doing so
+- 0.95/1 bc I tried many new things and learned a lot doing so
 
 ### RPG game tinkers
 - I added an inventory
@@ -26,7 +26,7 @@ permalink: /retrospective/
 ### RPG game tinkers writeup
 <img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 800px; height: auto;">
 <br>
-[Link to Jupyter notebook code review]({{site.baseurl}}/codereview/)
+[Link to Jupyter notebook code review]({{site.baseurl}}/codereview)
 - 0.95/1 bc I have a very good understanding about how the code works.
 
 ### Feedback from N@TM
@@ -66,7 +66,7 @@ permalink: /retrospective/
 - 0.92/1 bc I have a good plan of what to do in the future in both CS and the project
 
 
-Total score: 4.67/5
+Total score: 4.68/5
 
 
 
