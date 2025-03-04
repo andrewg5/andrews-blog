@@ -67,7 +67,7 @@ permalink: /retrospective/
 - 0.92/1 bc I have a good plan of what to do in the future in both CS and the project
 
 
-Total score: 4.68/5
+Total score: 4.68/5 or 0.936/1
 
 
 
