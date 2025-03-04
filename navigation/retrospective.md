@@ -11,9 +11,9 @@ permalink: /retrospective/
 ### 5 key things I did this trimester
 - Created a blog with github pages
 - Created a lesson with jupyter notebooks
-- Created an item that extended on base code and learned javascript inheritance 
-- Added an inventory to rpg game and learned to combine javascript and markdown
-- I made the quiz check for correct answers in the RPG game and learned about how to compare arrays.
+- Created an item that extended on base code
+- Added an inventory to rpg gam
+- I made the quiz check for correct answers in the RPG game.
 - 0.95/1 bc I tried many new things and learned a lot doing so
 
 ### RPG game tinkers
