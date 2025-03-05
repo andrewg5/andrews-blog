@@ -26,7 +26,7 @@ permalink: /retrospective/
 ### RPG game tinkers writeup
 <img src="{{site.baseurl}}/images/RPGideas/rpgplan.png" alt="plan" style="width: 800px; height: auto;">
 <br>
-[Link to Jupyter notebook code review]({{site.baseurl}}/csse/javascript/fundamentals/iteration/h)
+[Link to Jupyter notebook code review]({{site.baseurl}}/codereview)
 - 0.95/1 bc I have a very good understanding about how the code works.
 
 ### Feedback from N@TM
