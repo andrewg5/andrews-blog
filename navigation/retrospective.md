@@ -56,7 +56,7 @@ permalink: /retrospective/
 - collaborate well
 <br>
 - should be more creative
-- be willing to try more unique solutions
+- not very good with git(merge editor)
 
 #### Next Steps
 - rewrite code to be more expandable
